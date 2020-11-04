@@ -1,4 +1,6 @@
+import 'package:NvigationFlutter/page2.dart';
 import 'package:flutter/material.dart';
+import 'page2.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,30 +11,42 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.deepOrangeAccent,
+      appBar: AppBar(
         backgroundColor: Colors.deepOrangeAccent,
-        appBar: AppBar(
-          backgroundColor: Colors.deepOrangeAccent,
-          centerTitle: true,
-          title: Text('Página1'),
-        ),
-        body: Center(
-          child: Column(
-            children: <Widget>[
-            RaisedButton(
-              color: Colors.white,
-              onPressed: () {},
-              child: Text('Ir para a Página 2'),
-              padding: EdgeInsets.all(10.0),
-            ),
-            RaisedButton(
-              color: Colors.white,
-              onPressed: () {},
-              child: Text('Ir para a Página 2'),
-              padding: EdgeInsets.all(10.0),
-            ),
-        
-        ]),
+        centerTitle: true,
+        title: Text('Página1'),
+      ),
+      body: Center(
+        // child: Center(
+        child: (RaisedButton(
+          color: Colors.white,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Page2(),
+              ),
+            );
+          },
+          child: Text('Ir para a Página 2'),
+          padding: EdgeInsets.all(10.0),
+        )),
+        // ),
       ),
     );
   }
