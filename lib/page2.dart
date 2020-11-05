@@ -17,7 +17,7 @@ class Page2 extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text('Voltar para a Página 1'),
+            child: Text('Voltar para a página anterior'),
             padding: EdgeInsets.all(10.0),
           )),
         ),

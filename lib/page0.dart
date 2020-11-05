@@ -16,13 +16,17 @@ class Page0 extends StatelessWidget {
           children: <Widget>[
             RaisedButton(
               color: Colors.white,
-              onPressed: () {},
-              child: Text('Ir para a página 2'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/first');
+              },
+              child: Text('Ir para a página 1'),
             ),
             RaisedButton(
               color: Colors.white,
-              onPressed: () {},
-              child: Text('Ir para a página 1'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/second');
+              },
+              child: Text('Ir para a página 2'),
             ),
           ],
         ),
